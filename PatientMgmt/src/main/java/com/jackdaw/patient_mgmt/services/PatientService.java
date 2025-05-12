@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
-import com.jackdaw.patient_mgmt.PatientMgmtApplication;
 import com.jackdaw.patient_mgmt.models.Patient;
 import com.jackdaw.patient_mgmt.repositories.PatientRepository;
 
@@ -43,6 +42,11 @@ public class PatientService {
 		//save the fields and return
 		return patientRepository.save(existingPatient);
 		
+	}
+	
+	public void deletePatient(UUID id)
+	{
+		patientRepository.deleteById(id);
 	}
 }
 
